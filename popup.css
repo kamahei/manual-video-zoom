@@ -1,0 +1,90 @@
+:root {
+  color-scheme: dark light;
+  --bg: #141b25;
+  --fg: #edf3fa;
+  --muted: #bdcbdc;
+  --line: #3a4a5e;
+  --control: #28384c;
+  --control-hover: #3b516d;
+  --control-line: #62758d;
+  --accent: #8ddad1;
+  --accent-ink: #0d1520;
+  --ok: #6fd08c;
+  --warn: #e6c264;
+  --error: #f08a8a;
+  --pending: #8fa3ba;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f6f8fb;
+    --fg: #16202c;
+    --muted: #4a5a6d;
+    --line: #ccd7e4;
+    --control: #e7edf5;
+    --control-hover: #d5e0ed;
+    --control-line: #a2b2c5;
+    --accent: #0f7568;
+    --accent-ink: #ffffff;
+    --ok: #1c7340;
+    --warn: #845d0c;
+    --error: #ab2727;
+    --pending: #5b6c80;
+  }
+}
+
+body { width: 300px; margin: 0; padding: 16px; background: var(--bg); color: var(--fg); font: 14px/1.55 system-ui, sans-serif; }
+h1 { margin: 0 0 14px; font-size: 13px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
+
+fieldset { margin: 0; padding: 0; border: 0; }
+fieldset:disabled { opacity: .5; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+button { background: var(--control); color: var(--fg); border: 1px solid var(--control-line); border-radius: 8px; padding: 9px; font: inherit; cursor: pointer; }
+button:hover:not(:disabled) { background: var(--control-hover); }
+button:disabled { opacity: .45; cursor: default; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Current value */
+.dial { display: flex; align-items: center; gap: 10px; }
+.step { flex: 0 0 46px; height: 46px; padding: 0; font-size: 24px; line-height: 1; border-radius: 10px; }
+.readout { flex: 1; display: flex; align-items: baseline; justify-content: center; gap: 1px; }
+#amount { width: 2.9em; padding: 0; background: transparent; border: 0; border-bottom: 2px solid transparent;
+  color: var(--fg); font: 700 33px/1.1 system-ui, sans-serif; text-align: right; }
+#amount::-webkit-inner-spin-button, #amount::-webkit-outer-spin-button { appearance: none; margin: 0; }
+#amount:hover, #amount:focus { border-bottom-color: var(--control-line); }
+.readout span { font-size: 18px; font-weight: 600; color: var(--muted); }
+
+/* Slider */
+#zoom { width: 100%; margin: 16px 0 2px; accent-color: var(--accent); }
+.range-ends { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); }
+
+/* Presets */
+.presets { display: flex; gap: 6px; margin: 12px 0 0; }
+.presets button { flex: 1; padding: 7px 0; font-size: 12px; }
+.presets button[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
+
+.wide { width: 100%; margin-top: 8px; }
+#fit { background: var(--accent); border-color: transparent; color: var(--accent-ink); font-weight: 600; }
+#fit:hover:not(:disabled) { background: var(--accent); filter: brightness(1.08); }
+
+/* Status */
+#status { display: flex; gap: 8px; margin: 14px 0 0; font-size: 12.5px; color: var(--muted); }
+#status::before { content: ""; flex: 0 0 8px; width: 8px; height: 8px; margin-top: .48em; border-radius: 50%; background: var(--pending); }
+#status[data-state="ok"]::before { background: var(--ok); }
+#status[data-state="warn"]::before { background: var(--warn); }
+#status[data-state="error"]::before { background: var(--error); }
+
+/* Site access prompt */
+#access { margin-top: 10px; padding: 12px; border: 1px solid var(--control-line); border-radius: 8px; background: var(--control); }
+#access p { margin: 0 0 10px; font-size: 12.5px; color: var(--muted); }
+#access button { width: 100%; background: var(--accent); border-color: transparent; color: var(--accent-ink); font-weight: 600; }
+#access button:hover { background: var(--accent); filter: brightness(1.08); }
+
+/* Collapsed reference sections */
+details { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--line); }
+summary { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); cursor: pointer; list-style: none; }
+summary::-webkit-details-marker { display: none; }
+summary::before { content: "\25B8"; font-size: 10px; transition: transform .12s; }
+details[open] summary::before { transform: rotate(90deg); }
+details p { margin: 8px 0; font-size: 12px; color: var(--muted); }
+details button { width: 100%; padding: 7px; font-size: 12px; }

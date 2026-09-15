@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manual Video Zoom</title>
+<meta name="description" content="Chrome extension that manually zooms and crops HTML5 video so black bars disappear on a 21:9 or 32:9 ultrawide screen.">
+<style>
+  :root { color-scheme: dark light;
+    --bg:#141b25; --card:#1b2432; --fg:#edf3fa; --muted:#bdcbdc; --line:#3a4a5e;
+    --accent:#8ddad1; --accent-ink:#0d1520; }
+  @media (prefers-color-scheme: light) {
+    :root { --bg:#f6f8fb; --card:#ffffff; --fg:#16202c; --muted:#4a5a6d; --line:#ccd7e4;
+      --accent:#0f7568; --accent-ink:#ffffff; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; padding:56px 20px 80px; background:var(--bg); color:var(--fg);
+         font:16px/1.7 system-ui,"Segoe UI","Yu Gothic UI",Roboto,sans-serif; }
+  main { max-width:760px; margin:0 auto; }
+  h1 { font-size:32px; margin:0 0 10px; letter-spacing:-.01em; }
+  .tag { color:var(--muted); font-size:18px; margin:0 0 30px; }
+  h2 { font-size:19px; margin:40px 0 12px; padding-top:22px; border-top:1px solid var(--line); }
+  p { margin:0 0 16px; }
+  ul { margin:0 0 16px; padding-left:22px; }
+  li { margin-bottom:8px; }
+  a { color:var(--accent); }
+  .links { display:flex; flex-wrap:wrap; gap:12px; margin:26px 0 8px; }
+  .links a { display:inline-block; padding:11px 18px; border-radius:9px; text-decoration:none;
+             border:1px solid var(--line); background:var(--card); color:var(--fg); font-size:15px; }
+  .links a.primary { background:var(--accent); color:var(--accent-ink); border-color:transparent;
+                     font-weight:600; }
+  img { max-width:100%; border-radius:10px; border:1px solid var(--line); display:block; margin:24px 0; }
+  code { background:var(--card); padding:1px 5px; border-radius:4px; font-size:.92em; }
+  footer { margin-top:48px; padding-top:22px; border-top:1px solid var(--line);
+           color:var(--muted); font-size:14px; }
+</style>
+<main>
+  <h1>Manual Video Zoom</h1>
+  <p class="tag">Manually zoom video to remove the black bars and fill an ultrawide 21:9 or 32:9 screen.</p>
+
+  <div class="links">
+    <a class="primary" href="https://github.com/kamahei/manual-video-zoom">Source on GitHub</a>
+    <a href="https://github.com/kamahei/manual-video-zoom/releases">Releases</a>
+    <a href="privacy.html">Privacy policy</a>
+    <a href="https://github.com/kamahei/manual-video-zoom/issues">Report a problem</a>
+  </div>
+
+  <img src="hero.png"
+       alt="The same video at 100% with black bars on both sides, and at 200% filling the frame, beside the extension's control popup.">
+
+  <h2>What it does</h2>
+  <p>On a 21:9 or 32:9 monitor almost every film and TV episode ends up inside a narrow strip with
+  large black areas beside it. This extension enlarges the video until those bars are gone. The
+  aspect ratio is preserved, so removing the bars crops the edges of the picture — the same
+  trade-off a television makes when it zooms a 2.39:1 film to fit a 16:9 panel.</p>
+  <ul>
+    <li><strong>Fill the frame</strong> calculates the exact zoom from the video element's own
+      width and height. The picture itself is never inspected.</li>
+    <li>Or set it yourself: type any number from 100 to 400, drag the slider, tap a preset, or
+      hold −/+ to step by 1%.</li>
+    <li><code>Alt+Shift+U</code> / <code>Alt+Shift+J</code> adjust by 1%; <code>Alt+Shift+K</code>
+      resets. Reassign them at <code>chrome://extensions/shortcuts</code>.</li>
+    <li>The zoom is remembered per site, on this device.</li>
+  </ul>
+
+  <h2>How it works</h2>
+  <p>It sets three CSS properties — <code>scale</code>, <code>transform-origin</code> and
+  <code>clip-path</code> — on the page's largest visible <code>&lt;video&gt;</code> element, and
+  restores the original values on reset. That is the entire mechanism. It does not read, decode,
+  capture, record or download video, does not interact with DRM or protected media, and does not
+  bypass or circumvent anything on any website. It is a display setting, not a media tool.</p>
+
+  <h2>Privacy</h2>
+  <p>No data collection of any kind. There are no network requests in this extension: no
+  analytics, no telemetry, no advertising, no remote code, no third-party libraries and no build
+  step. The only thing saved is one number per site, in Chrome's local storage on your device.
+  The full <a href="privacy.html">privacy policy</a> says so in English and Japanese, and the
+  <a href="https://github.com/kamahei/manual-video-zoom">complete source</a> is unbundled and
+  unminified so you can check it yourself.</p>
+
+  <h2>Limits</h2>
+  <ul>
+    <li>Only the largest visible video in the main document. Videos inside iframes or shadow-root
+      players are not reached, and picture-in-picture is not supported.</li>
+    <li>Subtitles rendered as separate HTML elements are not scaled; subtitles burned into the
+      picture are cropped along with the edges.</li>
+    <li>A site's own CSS transforms or clipping can conflict with the zoom.</li>
+  </ul>
+
+  <footer>
+    MIT licensed. © 2026 Kamahei. Contact: <a href="mailto:kk@nekoreset.com">kk@nekoreset.com</a><br>
+    Manual Video Zoom is an independent project and is not affiliated with, endorsed by or
+    sponsored by any video service. All trademarks are the property of their respective owners.
+  </footer>
+</main>
+</html>

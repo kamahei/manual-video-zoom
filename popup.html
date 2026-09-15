@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manual Video Zoom</title>
+<link rel="stylesheet" href="popup.css">
+<body>
+  <h1 data-i18n="appName">Manual Video Zoom</h1>
+
+  <fieldset disabled id="controls">
+    <legend class="sr-only" data-i18n="zoomLabel"></legend>
+
+    <div class="dial">
+      <button type="button" id="decrease" class="step">&minus;</button>
+      <div class="readout">
+        <input id="amount" type="number" inputmode="numeric" min="100" max="400" step="1" value="100">
+        <span aria-hidden="true">%</span>
+      </div>
+      <button type="button" id="increase" class="step">+</button>
+    </div>
+
+    <input id="zoom" type="range" min="100" max="400" step="1" value="100" list="ticks">
+    <datalist id="ticks">
+      <option value="125"></option>
+      <option value="150"></option>
+      <option value="200"></option>
+      <option value="300"></option>
+    </datalist>
+    <div class="range-ends" aria-hidden="true"><span id="range-min"></span><span id="range-max"></span></div>
+
+    <div class="presets" id="presets" role="group">
+      <button type="button" data-percent="100">100%</button>
+      <button type="button" data-percent="125">125%</button>
+      <button type="button" data-percent="150">150%</button>
+      <button type="button" data-percent="200">200%</button>
+    </div>
+
+    <button type="button" id="fit" class="wide" data-i18n="fitButton"></button>
+    <button type="button" id="reset" class="wide" data-i18n="resetButton"></button>
+  </fieldset>
+
+  <p id="status" role="status" aria-live="polite" data-state="pending" data-i18n="connecting"></p>
+
+  <div id="access" hidden>
+    <p id="access-note"></p>
+    <button type="button" id="enable-site"></button>
+  </div>
+
+  <details>
+    <summary data-i18n="shortcutsSummary"></summary>
+    <p class="keys" id="keys"></p>
+    <button type="button" id="edit-shortcuts" data-i18n="editShortcuts"></button>
+  </details>
+
+  <details>
+    <summary data-i18n="accessSummary"></summary>
+    <p data-i18n="accessNote"></p>
+    <button type="button" id="enable-all" data-i18n="enableAll"></button>
+  </details>
+
+  <details>
+    <summary data-i18n="detailsSummary"></summary>
+    <p data-i18n="intro"></p>
+    <p data-i18n="fitHint"></p>
+    <p data-i18n="storageNote"></p>
+    <p data-i18n="sites"></p>
+  </details>
+
+  <script src="constants.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+{
+  "appName": {
+    "message": "Manual Video Zoom"
+  },
+  "appDescription": {
+    "message": "黒帯を手動ズームで消して、21:9・32:9のウルトラワイド画面いっぱいに。設定は端末内のみ、外部通信もデータ収集もありません。"
+  },
+  "intro": {
+    "message": "映像の縦横比を保って拡大します。"
+  },
+  "zoomLabel": {
+    "message": "動画の倍率"
+  },
+  "decrease": {
+    "message": "1%縮小（長押しで連続）"
+  },
+  "increase": {
+    "message": "1%拡大（長押しで連続）"
+  },
+  "presetsLabel": {
+    "message": "倍率プリセット"
+  },
+  "fitButton": {
+    "message": "枠いっぱいに合わせる"
+  },
+  "fitHint": {
+    "message": "先に全画面にしてから「枠いっぱいに合わせる」を押してください。動画のサイズだけから、映像がプレーヤーいっぱいに広がる倍率を計算します。"
+  },
+  "fitUnavailable": {
+    "message": "「枠いっぱいに合わせる」は使えません。すでに映像が枠いっぱいか、動画のサイズがまだ分かりません。"
+  },
+  "resetButton": {
+    "message": "リセット（100%）"
+  },
+  "connecting": {
+    "message": "接続しています…"
+  },
+  "saveError": {
+    "message": "設定を保存できませんでした。"
+  },
+  "applied": {
+    "message": "動画に適用しています。"
+  },
+  "noVideo": {
+    "message": "動画が見つかりません。再生すると自動で適用します。"
+  },
+  "notEnabled": {
+    "message": "このページではまだ有効になっていません。"
+  },
+  "notEnabledNote": {
+    "message": "許可したサイトにだけ入ります。ここで有効にすると、再読み込み後も使えます。"
+  },
+  "enableSite": {
+    "message": "$1 で有効にする"
+  },
+  "permissionDenied": {
+    "message": "許可されなかったため有効にできませんでした。"
+  },
+  "unsupportedPage": {
+    "message": "この種類のページでは拡張機能を実行できません。"
+  },
+  "tabError": {
+    "message": "タブに接続できませんでした。"
+  },
+  "storageNote": {
+    "message": "倍率はこのサイト用に端末へ保存されます。拡大すると映像の端が切れます。"
+  },
+  "shortcutsSummary": {
+    "message": "キーボードショートカット"
+  },
+  "editShortcuts": {
+    "message": "ショートカットキーを変更"
+  },
+  "accessSummary": {
+    "message": "サイトへのアクセス"
+  },
+  "accessNote": {
+    "message": "下記のサイトは最初から使えます。それ以外のサイトは、このポップアップから一度許可すれば以後も使えます。許可の確認と取り消しは chrome://extensions の「詳細」→「サイトへのアクセス」で行えます。"
+  },
+  "enableAll": {
+    "message": "すべてのサイトを許可する"
+  },
+  "detailsSummary": {
+    "message": "対象サイトと注意事項"
+  },
+  "zoomIn": {
+    "message": "動画を1%拡大"
+  },
+  "zoomOut": {
+    "message": "動画を1%縮小"
+  },
+  "resetCommand": {
+    "message": "動画の拡大をリセット"
+  },
+  "keys": {
+    "message": "キー：$1 / $2（±1%）、$3（リセット）"
+  },
+  "unassigned": {
+    "message": "未割り当て"
+  },
+  "sites": {
+    "message": "対象：Netflix、U-NEXT、Hulu（日米）、YouTube、Disney+、Prime Video（Amazon日米の動画ページを含む）、Apple TV、ABEMA、TVer。"
+  }
+}

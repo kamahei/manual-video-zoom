@@ -1,0 +1,66 @@
+name: Bug report
+description: Something does not work, or works wrongly, on a site
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please do not report security problems here — see
+        [SECURITY.md](https://github.com/kamahei/manual-video-zoom/blob/main/SECURITY.md).
+
+  - type: input
+    id: site
+    attributes:
+      label: Site
+      description: The page URL, or the service name. Write "not listed" if it is a site you allowed yourself.
+      placeholder: https://www.example.com/watch/12345
+    validations:
+      required: true
+
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened, and what you expected instead
+    validations:
+      required: true
+
+  - type: input
+    id: status
+    attributes:
+      label: The exact text the popup showed
+      description: Copy the line next to the coloured dot, for example "No video found. Start playback to apply zoom."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: fullscreen
+    attributes:
+      label: Was the player in fullscreen?
+      options: ['Fullscreen', 'Windowed', 'Both, same result']
+    validations:
+      required: true
+
+  - type: input
+    id: aspect
+    attributes:
+      label: Monitor aspect ratio and resolution
+      placeholder: 32:9, 5120x1440
+    validations:
+      required: true
+
+  - type: input
+    id: versions
+    attributes:
+      label: Extension version, Chrome version and OS
+      description: The extension version is on chrome://extensions; the Chrome version is on chrome://version.
+      placeholder: 1.0.0, Chrome 152.0.7977.83, Windows 11
+    validations:
+      required: true
+
+  - type: input
+    id: access
+    attributes:
+      label: What chrome://extensions → Details → Site access shows for this site
+      placeholder: On specific sites / On all sites / On click
+    validations:
+      required: false

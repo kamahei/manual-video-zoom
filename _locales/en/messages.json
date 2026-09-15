@@ -1,0 +1,104 @@
+{
+  "appName": {
+    "message": "Manual Video Zoom"
+  },
+  "appDescription": {
+    "message": "Manually zoom video to remove the black bars and fill an ultrawide 21:9 or 32:9 screen. Local only, no data collection."
+  },
+  "intro": {
+    "message": "Enlarge video while keeping its proportions."
+  },
+  "zoomLabel": {
+    "message": "Video zoom"
+  },
+  "decrease": {
+    "message": "Zoom out by 1% (hold to repeat)"
+  },
+  "increase": {
+    "message": "Zoom in by 1% (hold to repeat)"
+  },
+  "presetsLabel": {
+    "message": "Zoom presets"
+  },
+  "fitButton": {
+    "message": "Fill the frame"
+  },
+  "fitHint": {
+    "message": "Go fullscreen first, then use Fill the frame: it calculates the zoom that makes the picture span the player, from the video size alone."
+  },
+  "fitUnavailable": {
+    "message": "Fill the frame is unavailable: the picture already spans the player, or its size is not known yet."
+  },
+  "resetButton": {
+    "message": "Reset (100%)"
+  },
+  "connecting": {
+    "message": "Connecting…"
+  },
+  "saveError": {
+    "message": "Could not save settings."
+  },
+  "applied": {
+    "message": "Applied to the video."
+  },
+  "noVideo": {
+    "message": "No video found. Start playback to apply zoom."
+  },
+  "notEnabled": {
+    "message": "Not enabled on this page yet."
+  },
+  "notEnabledNote": {
+    "message": "This extension only reaches sites you allow. Turning it on here keeps working after a reload."
+  },
+  "enableSite": {
+    "message": "Enable on $1"
+  },
+  "permissionDenied": {
+    "message": "Not enabled: permission was not granted."
+  },
+  "unsupportedPage": {
+    "message": "Extensions cannot run on this kind of page."
+  },
+  "tabError": {
+    "message": "Could not connect to this tab."
+  },
+  "storageNote": {
+    "message": "Zoom is saved on this device for this site. Enlarging crops the edges of the picture."
+  },
+  "shortcutsSummary": {
+    "message": "Keyboard shortcuts"
+  },
+  "editShortcuts": {
+    "message": "Change shortcut keys"
+  },
+  "accessSummary": {
+    "message": "Site access"
+  },
+  "accessNote": {
+    "message": "The sites listed below work straight away. Anywhere else, allow the site once from this popup and it keeps working. Review or remove access in chrome://extensions under Details, Site access."
+  },
+  "enableAll": {
+    "message": "Allow every site"
+  },
+  "detailsSummary": {
+    "message": "Supported sites and notes"
+  },
+  "zoomIn": {
+    "message": "Zoom video in by 1%"
+  },
+  "zoomOut": {
+    "message": "Zoom video out by 1%"
+  },
+  "resetCommand": {
+    "message": "Reset video zoom"
+  },
+  "keys": {
+    "message": "Shortcuts: $1 / $2 (±1%), $3 (reset)."
+  },
+  "unassigned": {
+    "message": "Not assigned"
+  },
+  "sites": {
+    "message": "Sites: Netflix, U-NEXT, Hulu (Japan/US), YouTube, Disney+, Prime Video (including Amazon JP/US video pages), Apple TV, ABEMA, TVer."
+  }
+}

@@ -1,0 +1,6 @@
+# The store ZIP is built from the working tree, so line endings must not depend
+# on who checked the repository out. Without this, a Windows clone would package
+# CRLF and a Linux clone LF, and the two archives would not match.
+* text=auto eol=lf
+
+*.png binary

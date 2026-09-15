@@ -1,0 +1,32 @@
+# Build output. The store ZIP is a release artifact, never a committed file.
+/dist/
+*.zip
+*.crx
+
+# Packing an extension from chrome://extensions writes a private key next to
+# the folder. Publishing one would be a real incident, so never track them.
+*.pem
+
+# Store submission material: listing copy, permission justifications, reviewer
+# test instructions, the submission checklist and the uploaded images. All of it
+# is for the developer's own use when filling in the dashboard, so it stays on
+# this machine and out of the repository.
+/store-assets/
+
+# OS
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# This project has no dependencies and no build step; the entry is here so a
+# stray install cannot be committed by accident.
+node_modules/
+npm-debug.log*
+package-lock.json
