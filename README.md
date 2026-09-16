@@ -13,7 +13,7 @@ A small, dependency-free Chrome Manifest V3 extension that manually zooms and cr
 - Works on a fixed list of major streaming sites out of the box, and **on any other site once you allow it from the popup** — the grant is per site and survives reloads. See [site scopes and limitations](docs/sites.md).
 
 ## Install
-From the Chrome Web Store: *listing URL, added after approval*.
+Install from the Chrome Web Store: <https://chromewebstore.google.com/detail/manual-video-zoom/bangdldkomlemcendmmfecogcpjhoelf>.
 
 To run this source directly instead:
 1. Keep this folder at a stable location and open `chrome://extensions`.

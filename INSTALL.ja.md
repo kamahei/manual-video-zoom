@@ -1,6 +1,9 @@
 # 導入・使い方
 
-## Chrome に読み込む
+## Chrome ウェブストアから入れる
+<https://chromewebstore.google.com/detail/manual-video-zoom/bangdldkomlemcendmmfecogcpjhoelf> を開き、「Chrome に追加」を押します。通常はこちらをお使いください。更新は Chrome が自動で行います。
+
+## ソースを直接読み込む
 1. ZIPを使う場合は先に展開し、`manual-video-zoom` フォルダーを移動しない場所へ置きます。
 2. Chrome のアドレス欄に `chrome://extensions` と入力します。
 3. 右上の「デベロッパー モード」をオンにします。
