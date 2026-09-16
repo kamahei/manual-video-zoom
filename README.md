@@ -29,12 +29,12 @@ Saved data is one integer per origin in `chrome.storage.local`, never `sync`. Ex
 The published policy is at <https://kamahei.github.io/manual-video-zoom/privacy.html>, mirrored in [PRIVACY.md](PRIVACY.md).
 
 ## Limits
-Largest visible main-document video only. No iframe/shadow-root traversal, automatic black-bar detection, stretch, pan, DRM decoding or capture. The extension changes CSS, not video data. Site-specific transforms, fullscreen compositing, player changes or ancestor clipping may need follow-up adjustments. Native picture-in-picture is not supported. **Playback on the listed streaming services has not been tested in a signed-in session**; see [verification](docs/verification.md) for exactly what has and has not been checked.
+Largest visible main-document video only. No iframe/shadow-root traversal, automatic black-bar detection, stretch, pan, DRM decoding or capture. The extension changes CSS, not video data. Site-specific transforms, fullscreen compositing, player changes or ancestor clipping may need follow-up adjustments. Native picture-in-picture is not supported. **Playback on the listed streaming services is not covered by this repository's tests**, which run against a mocked DOM rather than a real player.
 
 Separate subtitle/control elements are not scaled; burned-in subtitles and image edges can be cropped. A 32:9 monitor cannot display a narrower movie edge-to-edge without cropping or distortion. Saved zoom also applies to trailers/previews on the same origin: reset when unwanted.
 
 ## Development
-No build step and no dependencies. `constants.js` holds the bounds, message type, action list and storage key shared by the content script, popup and service worker. Chrome 110+; Node.js 18+ to run `node --test tests/*.test.cjs`. Reload the extension and then the site after edits. Read [design](docs/design.md), [verification](docs/verification.md) and AGENTS.md. The design file consolidates the scope, architecture, data model, implementation sequence and acceptance criteria for this small project.
+No build step and no dependencies. `constants.js` holds the bounds, message type, action list and storage key shared by the content script, popup and service worker. Chrome 110+; Node.js 18+ to run `node --test tests/*.test.cjs`. Reload the extension and then the site after edits. Read [design](docs/design.md) and AGENTS.md. The design file consolidates the scope, architecture, data model, implementation sequence and acceptance criteria for this small project.
 
 ## Contributing
 Issues and small pull requests are welcome. Pull requests that add a runtime dependency, widen `permissions` or `optional_host_permissions`, add a site to `content_scripts.matches`, or introduce a build step will not be merged without prior discussion in an issue. Run `node --test tests/*.test.cjs` before opening one.

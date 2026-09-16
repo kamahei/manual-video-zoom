@@ -12,6 +12,7 @@
 # is for the developer's own use when filling in the dashboard, so it stays on
 # this machine and out of the repository.
 /store-assets/
+/docs/verification.md
 
 # OS
 .DS_Store
